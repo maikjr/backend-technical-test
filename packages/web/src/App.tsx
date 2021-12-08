@@ -1,16 +1,15 @@
-import React, { useEffect } from 'react'
-import api from '@backend-technical-test/axios-config'
+import React from 'react'
+import GlobalStyle from './styles/global'
 
-// import { Container } from './styles';
+import Home from './pages/Home'
 
 const App: React.FC = () => {
-  useEffect(() => {
-    api.get('/').then(response => {
-      console.log(response)
-    })
-  }, [])
-
-  return <h1>Hello World</h1>
+  return (
+    <>
+      <GlobalStyle />
+      <Home />
+    </>
+  )
 }
 
 export default App

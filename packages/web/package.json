@@ -10,9 +10,12 @@
   "dependencies": {
     "@backend-technical-test/axios-config": "*",
     "react": "16.13.1",
+    "react-currency-input-field": "^3.6.0",
     "react-dom": "^16.13.1",
     "react-spinners": "^0.11.0",
-    "styled-components": "^5.2.3"
+    "styled-components": "^5.2.3",
+    "react-chartjs-2": "^2.10.0",
+    "chart.js": "^2.9.4"
   },
   "devDependencies": {
     "@babel/core": "^7.10.5",
@@ -20,8 +23,8 @@
     "@babel/preset-env": "^7.10.4",
     "@babel/preset-react": "^7.10.4",
     "@babel/preset-typescript": "^7.10.4",
-    "@pmmmwh/react-refresh-webpack-plugin": "^0.3.3",
     "@backend-technical-test/eslint-config": "*",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.3.3",
     "@types/react": "^16.9.43",
     "@types/react-dom": "^16.9.8",
     "@types/styled-components": "^5.1.10",

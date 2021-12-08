@@ -8,7 +8,7 @@ router.get('/', (request, response) => {
   return response.status(201).json({ message: 'Hello, friend!' })
 })
 
-router.get('/index', (request, response) => {
+router.post('/cdb-unit-prices', (request, response) => {
   return cdbUnitPricesController.handle(request, response)
 })
 export { router }
