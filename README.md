@@ -17,7 +17,7 @@ O desafio consiste em criar um serviço para calcular o valor de um CDB pós fix
 
 ## ⚡ Demo
 
-Front-end: `https://backend-test.hitips.me`
+Front-end: [`https://backend-test.hitips.me`](https://backend-test.hitips.me)
 
 ## ✨ Tecnologias
 
@@ -37,7 +37,10 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - Inicie o front-end com `cd packages/web && yarn start`
 
 A aplicação web pode ser acessada em [`localhost:4000`](http://localhost:4000).
-O servidor pode ser acessada em [`localhost:1526`](http://localhost:1526).
+O servidor pode ser acessado em [`localhost:1526`](http://localhost:1526).
+
+## 🚨 Testes
+- Execute `yarn test`
 
 ## 📄 Licença
 
