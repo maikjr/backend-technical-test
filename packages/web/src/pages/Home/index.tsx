@@ -3,6 +3,8 @@ import ClipLoader from 'react-spinners/ClipLoader'
 
 import { api } from '@backend-technical-test/axios-config'
 
+import { formatCurrency } from '../../util/formatCurrency'
+
 import {
   Container,
   FormCalculator,
@@ -74,7 +76,7 @@ const App: React.FC = () => {
         <FormCalculatorRow>
           <p>Taxa do CDB</p>
           <input
-            type="number"
+            type="text"
             name="cdbRate"
             value={cdbRate}
             onChange={event => setCdbRate(event.target.value)}
@@ -94,10 +96,7 @@ const App: React.FC = () => {
         <PriceContainer>
           <p>Valor Calculado:</p>
           <h4>
-            R${' '}
-            {new Intl.NumberFormat('pt-BR', {
-              maximumSignificantDigits: 6
-            }).format(getCdbPrices[getCdbPrices.length - 1].unitPrice)}
+            R$ {formatCurrency(getCdbPrices[getCdbPrices.length - 1].unitPrice)}
           </h4>
         </PriceContainer>
       )}
