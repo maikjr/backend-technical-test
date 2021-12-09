@@ -1,12 +1,12 @@
 export type CdiPrice = {
-  date: Date
+  date: Date | string
   price: number
   cdirate?: number
   accumulatedCdiRate?: number
 }
 
 export type CdbUnitPrice = {
-  date: Date
+  date: Date | string
   unitPrice: number
 }
 

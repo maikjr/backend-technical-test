@@ -1,5 +1,5 @@
 export interface ICdbUnitPricesRequestDTO {
-  investmentDate: Date
+  investmentDate: Date | string
   cdbRate: number
-  currentDate: Date
+  currentDate: Date | string
 }

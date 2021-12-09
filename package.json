@@ -7,8 +7,14 @@
       "packages/*"
     ]
   },
+  "scripts": {
+    "test": "jest --forceExit --coverage --verbose"
+  },
   "devDependencies": {
     "@backend-technical-test/eslint-config": "*",
+    "@types/jest": "^27.0.3",
+    "jest": "^27.4.3",
+    "ts-jest": "^27.1.1",
     "typescript": "^4.1.3"
   },
   "main": "index.js",

@@ -1,10 +1,4 @@
-import { parseFile } from 'fast-csv'
-
-import {
-  formateDate,
-  calculateCdiRate,
-  calculateCdiAccumulated
-} from '../../utils'
+import { calculateCdiRate, calculateCdiAccumulated } from '../../utils'
 
 import {
   CdiPrice,
@@ -12,18 +6,32 @@ import {
   ICdbUnitPricesRepository
 } from '../ICdbUnitPricesRepository'
 
-export class CdbUnitPricesRepository implements ICdbUnitPricesRepository {
+export class CdbUnitPricesInMemory implements ICdbUnitPricesRepository {
   async processorCsvFile(): Promise<CdiPrice[]> {
-    return new Promise((resolve, reject) => {
-      const data = []
-      parseFile('./cdi_prices.csv', { skipLines: 1 })
-        .on('error', error => reject(error))
-        .on('data', row => {
-          const processor = { date: formateDate(row[1]), price: row[2] }
-          data.push(processor)
-        })
-        .on('end', () => resolve(data))
-    })
+    const cdiPrices: CdiPrice[] = [
+      {
+        date: '2016-11-14',
+        price: 13.88
+      },
+      {
+        date: '2016-11-16',
+        price: 13.88
+      },
+      {
+        date: '2016-11-17',
+        price: 13.88
+      },
+      {
+        date: '2016-11-18',
+        price: 13.88
+      },
+      {
+        date: '2016-11-21',
+        price: 13.88
+      }
+    ]
+
+    return cdiPrices
   }
 
   processorCdiPrices(listCdiPrices: CdiPrice[], cdbRate: number): CdiPrice[] {
