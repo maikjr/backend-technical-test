@@ -11,6 +11,14 @@
   <img alt="Happy" src="https://i.imgur.com/Gg7AlSs.png" width="100%">
 </p>
 
+## 💻 Desafio
+
+O desafio consiste em criar um serviço para calcular o valor de um CDB pós fixado indexado ao CDI em uma data específica e uma página web em que esses dados calculados serão expostos.
+
+## ⚡ Demo
+
+Front-end: `https://backend-test.hitips.me`
+
 ## ✨ Tecnologias
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
@@ -20,9 +28,6 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [React](https://reactjs.org/)
 - [Jest](https://jestjs.io/)
 
-## 💻 Desafio
-
-O desafio consiste em criar um serviço para calcular o valor de um CDB pós fixado indexado ao CDI em uma data específica e uma página web em que esses dados calculados serão expostos.
 
 ## 🚀 Como executar
 
