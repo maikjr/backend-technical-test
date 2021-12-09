@@ -94,6 +94,7 @@ const App: React.FC = () => {
         <PriceContainer>
           <p>Valor Calculado:</p>
           <h4>
+            R${' '}
             {new Intl.NumberFormat('pt-BR', {
               maximumSignificantDigits: 6
             }).format(getCdbPrices[getCdbPrices.length - 1].unitPrice)}
