@@ -10,6 +10,11 @@ export const Container = styled.div`
     z-index: 100;
     text-align: center;
   }
+  .loading {
+    text-align: center;
+    margin: 20px 0;
+    width: 100%;
+  }
 `
 export const FormCalculator = styled.form`
   background: #10c0c6;
@@ -30,7 +35,7 @@ export const FormCalculatorRow = styled.div`
   justify-content: center;
   flex-direction: column;
   p {
-    font-size: 15px;
+    font-size: 13px;
     color: #ffffff;
     font-weight: 600;
     letter-spacing: 1px;
@@ -50,6 +55,7 @@ export const FormCalculatorRow = styled.div`
     font-weight: 600;
     margin-top: 18px;
     cursor: pointer;
+    font-size: 13px;
   }
 `
 export const ChartContainer = styled.div`

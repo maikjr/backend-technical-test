@@ -3,7 +3,6 @@ import ClipLoader from 'react-spinners/ClipLoader'
 
 import { api } from '@backend-technical-test/axios-config'
 
-import CurrencyInput from 'react-currency-input-field'
 import {
   Container,
   FormCalculator,
@@ -74,42 +73,42 @@ const App: React.FC = () => {
         </FormCalculatorRow>
         <FormCalculatorRow>
           <p>Taxa do CDB</p>
-          <CurrencyInput
+          <input
+            type="number"
             name="cdbRate"
-            required
-            fixedDecimalLength={2}
             value={cdbRate}
-            onValueChange={(value, name) => setCdbRate(value)}
+            onChange={event => setCdbRate(event.target.value)}
+            required
           />
         </FormCalculatorRow>
         <FormCalculatorRow>
           {getLoading ? (
-            <p>carregando...</p>
+            <ClipLoader color={'#fff'} loading={true} size={30} />
           ) : (
             <button type="submit">CALCULAR</button>
           )}
         </FormCalculatorRow>
       </FormCalculator>
 
-      {!getLoading && getCdbPrices.length && (
+      {getCdbPrices.length > 0 && (
         <PriceContainer>
           <p>Valor Calculado:</p>
           <h4>
             {new Intl.NumberFormat('pt-BR', {
               maximumSignificantDigits: 6
-            }).format(getCdbPrices.pop().unitPrice)}
+            }).format(getCdbPrices[getCdbPrices.length - 1].unitPrice)}
           </h4>
         </PriceContainer>
       )}
 
+      {getLoading && (
+        <div className="loading">
+          <ClipLoader color={'#10c0c6'} loading={true} size={30} />
+        </div>
+      )}
+
       <ChartContainer>
-        {getLoading ? (
-          <div className="loading">
-            <ClipLoader color={'#10c0c6'} loading={true} size={30} />
-          </div>
-        ) : (
-          !!getCdbPrices.length && <LineChart CdbPrices={getCdbPrices} />
-        )}
+        {getCdbPrices.length > 0 && <LineChart CdbPrices={getCdbPrices} />}
       </ChartContainer>
     </Container>
   )

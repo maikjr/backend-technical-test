@@ -13,10 +13,10 @@ import {
 } from '../ICdbUnitPricesRepository'
 
 export class CdbUnitPricesRepository implements ICdbUnitPricesRepository {
-  async processorCsvFile(): Promise<CdiPrice[]> {
+  async processorCsvFile (): Promise<CdiPrice[]> {
     return new Promise((resolve, reject) => {
       const data = []
-      parseFile('./cdi_prices.csv', { skipLines: 1 })
+      parseFile('./src/csv/cdi_prices.csv', { skipLines: 1 })
         .on('error', error => reject(error))
         .on('data', row => {
           const processor = { date: formateDate(row[1]), price: row[2] }
@@ -26,7 +26,7 @@ export class CdbUnitPricesRepository implements ICdbUnitPricesRepository {
     })
   }
 
-  processorCdiPrices(listCdiPrices: CdiPrice[], cdbRate: number): CdiPrice[] {
+  processorCdiPrices (listCdiPrices: CdiPrice[], cdbRate: number): CdiPrice[] {
     let accumulatedCdiRate = 1
 
     const sortListCdiPrices = listCdiPrices.reverse()
@@ -45,7 +45,7 @@ export class CdbUnitPricesRepository implements ICdbUnitPricesRepository {
     })
   }
 
-  listUnitPricesCdb (listCdiPrices: CdiPrice[]): CdbUnitPrice[] {
+  listUnitPricesCdb(listCdiPrices: CdiPrice[]): CdbUnitPrice[] {
     return listCdiPrices.map(cdiPrice => {
       const calculateUnitPrice = 1000 * cdiPrice.accumulatedCdiRate
       return {
