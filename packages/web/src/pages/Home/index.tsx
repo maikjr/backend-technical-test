@@ -29,7 +29,7 @@ const App: React.FC = () => {
       try {
         const fetchCdbUnitPrices = await api.post('/cdb-unit-prices', {
           investmentDate,
-          cdbRate: parseFloat(cdbRate),
+          cdbRate: cdbRate.replace(',', '.'),
           currentDate
         })
         const { cdbPrices } = fetchCdbUnitPrices.data
